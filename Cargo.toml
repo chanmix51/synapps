@@ -9,4 +9,4 @@ edition = "2021"
 registry = "git://github.com/rust-lang/crates.io-index.git"
 
 [dependencies]
-tokio = { version = "1.28.2", features = ["sync", "rt"] }
+tokio = { version = "1.28.2", features = ["sync", "rt", "macros", "time"] }
