@@ -115,7 +115,10 @@ mod tests {
             content: "This is some content".to_string(),
         };
         sender.send(event_message.clone()).await.unwrap();
-        tokio::time::sleep(Duration::from_millis(20)).await;
+
+        // make tokio scheduler to switch task.
+        tokio::time::sleep(Duration::from_nanos(0)).await;
+
         receiver1.try_recv().unwrap_err();
 
         let message = receiver2
