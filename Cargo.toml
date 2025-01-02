@@ -1,12 +1,14 @@
 [package]
 name = "synapps"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
+readme = "README.md"
+license-file = "LICENSE.txt"
+description = "Simple event dispatcher for Rust applications. It allows senders to send messages to topics. Subscribers will then receive the message based on their subscription policy."
+repository = "https://github.com/chanmix51/synapps"
+keywords = ["event", "dispatcher", "message", "async"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[source.crates-io]
-registry = "git://github.com/rust-lang/crates.io-index.git"
 
 [dependencies]
 chrono = "0.4.39"

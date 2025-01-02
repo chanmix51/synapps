@@ -18,14 +18,14 @@ Lifecycle Management: The dispatcher manages the lifecycle of event processing, 
 
 In summary, the `EventDispatcher` acts as a mediator that routes events from producers to subscribers based on matching patterns, handling concurrency and lifecycle management in an asynchronous environment.
 
-```
+```rust
 use chrono::Utc;
-use tokio::{sync::mpsc::unbounded_channel, task::yield_now, time::timeout, select};
 use serde::Serialize;
-use std::sync::Arc;
-use std::time::Duration;
+use std::{sync::Arc, time::Duration};
+use tokio::{sync::mpsc::unbounded_channel, task::yield_now, time::timeout, select};
 
 use synapps::*;
+
 #[derive(Serialize, Clone, PartialEq, Eq)]
 pub struct Message(String);
 
