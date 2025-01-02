@@ -10,5 +10,5 @@ registry = "git://github.com/rust-lang/crates.io-index.git"
 
 [dependencies]
 chrono = "0.4.39"
-serde = "1.0.217"
+serde = { version = "1.0.217", features = ["derive"] }
 tokio = { version = "1.42.0", features = ["sync", "rt", "macros", "time"] }
