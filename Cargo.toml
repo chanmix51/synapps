@@ -1,6 +1,6 @@
 [package]
 name = "synapps"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2021"
 readme = "README.md"
 license-file = "LICENSE.txt"
@@ -13,4 +13,4 @@ keywords = ["event", "dispatcher", "message", "async"]
 [dependencies]
 chrono = "0.4.39"
 serde = { version = "1.0.217", features = ["derive"] }
-tokio = { version = "1.42.0", features = ["sync", "rt", "macros", "time"] }
+tokio = { version = "1.43.0", features = ["sync", "rt", "macros", "time"] }

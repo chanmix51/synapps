@@ -1,6 +1,5 @@
 use std::{collections::HashMap, sync::Arc};
 
-use serde::Serialize;
 use tokio::sync::mpsc::{unbounded_channel, UnboundedReceiver, UnboundedSender};
 
 use crate::StdResult;
@@ -9,7 +8,7 @@ use crate::StdResult;
 pub type SenderId = String;
 
 /// Trait for the event type.
-pub trait Event: Serialize + Clone + PartialEq + Eq + Sync + Send + 'static {}
+pub trait Event: Clone + PartialEq + Eq + Sync + Send + 'static {}
 
 /// Represents an event message.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -107,12 +106,11 @@ where
 /// ```
 /// use chrono::Utc;
 /// use tokio::{sync::mpsc::unbounded_channel, task::yield_now, time::timeout, select};
-/// use serde::Serialize;
 /// use std::sync::Arc;
 /// use std::time::Duration;
 ///
 /// use synapps::*;
-/// #[derive(Serialize, Clone, PartialEq, Eq)]
+/// #[derive(Clone, PartialEq, Eq)]
 /// pub struct Message(String);
 ///
 /// impl Event for Message {}
